@@ -1,0 +1,7 @@
+.nav-link {
+  /* color: whitesmoke !important  ; */
+  font-weight: bolder;
+  mix-blend-mode: "-moz-initial" !important;
+  border: 0 !important;
+  font-weight: 600 !important;
+}

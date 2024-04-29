@@ -1,0 +1,11 @@
+body {
+  background-image: url("./assets/Homepage1.jpg");
+
+  /* background-image: radial-gradient(
+    whitesmoke,
+    rgb(121, 104, 104),
+    rgb(58, 55, 55)
+  ); */
+  background-size: cover;
+  background-position: center top;
+}
