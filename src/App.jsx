@@ -19,7 +19,7 @@ import UserManagement from "./pages/UserManagement";
 
 axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
 // "http://localhost:3001/api";
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function App() {
   return (
