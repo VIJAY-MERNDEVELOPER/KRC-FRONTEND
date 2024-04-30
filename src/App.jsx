@@ -17,7 +17,7 @@ import Recipe from "./pages/Recipe";
 
 import UserManagement from "./pages/UserManagement";
 
-axios.defaults.baseURL = "http://localhost:3001/api";
+axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
 // "http://localhost:3001/api";
 // axios.defaults.withCredentials = true;
 // "https://krc-backend.onrender.com/api";
