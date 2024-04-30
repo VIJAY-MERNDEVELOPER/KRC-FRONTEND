@@ -11,7 +11,7 @@ function EditRecipeForm({ input, setInput, id }) {
   const courses = ["None", "Appetizer", "Side Dish", "Snack"];
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(input);
+
     try {
       const res = await axios.put(`/recipe/edit/${id}`, input, {
         headers: {

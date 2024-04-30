@@ -3,13 +3,9 @@ import "./RecipeCard.css";
 
 /* eslint-disable react/prop-types */
 function RecipeCard({ recipe }) {
-  // console.log(recipe.createdOn.tolocaleString("en-IN"));
-  console.log(recipe.user.userid);
   const utcDate = new Date(recipe.createdOn.toLocaleString("en-IN"));
 
   const createdOn = utcDate.toLocaleString("en-IN"); // Convert to local time
-
-  console.log(createdOn);
 
   return (
     <div className="card text-center ">

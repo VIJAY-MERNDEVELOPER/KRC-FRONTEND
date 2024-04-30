@@ -12,7 +12,6 @@ function EditRecipe() {
 
   const [input, setInput] = useState({ ...state });
 
-  console.log({ ...state });
   return (
     <div className="container ">
       <h1 className="  text-start mx-5">EDIT RECIPE</h1>

@@ -29,7 +29,6 @@ const RecipeContextProvider = ({ children }) => {
       });
       if (res.status === 200) {
         setRecipeData(res.data.recipe);
-        console.log(res.data.recipe);
       }
     } catch (error) {
       toast.error(error.message);

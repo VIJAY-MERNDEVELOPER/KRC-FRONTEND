@@ -17,10 +17,10 @@ import Recipe from "./pages/Recipe";
 
 import UserManagement from "./pages/UserManagement";
 
-axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
+axios.defaults.baseURL = "http://localhost:3001/api";
 // "http://localhost:3001/api";
 // axios.defaults.withCredentials = true;
-
+// "https://krc-backend.onrender.com/api";
 function App() {
   return (
     <>
