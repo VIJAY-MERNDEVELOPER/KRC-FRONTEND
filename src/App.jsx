@@ -17,7 +17,7 @@ import Recipe from "./pages/Recipe";
 import UserManagement from "./pages/UserManagement";
 
 // Define BaseUrl of Rest Api
-axios.defaults.baseURL = "http://localhost:3001/api";
+axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
 //  "https://krc-backend.onrender.com/api";
 
 function App() {
