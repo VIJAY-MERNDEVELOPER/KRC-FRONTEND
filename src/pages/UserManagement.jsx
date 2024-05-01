@@ -1,18 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { UseUser } from "../contexts/userContexts";
 
 function UserManagement() {
   const [users, setUsers] = useState([]);
   const [userId, setUserId] = useState(true);
+  const { sessionData } = UseUser();
 
+  const role = sessionData.role;
+  const token = sessionData.token;
   const fetchUsers = async () => {
     try {
       const res = await axios.get("/user/getusers", {
         headers: {
           "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          role: sessionStorage.getItem("role"),
+          "x-auth-token": token,
+          role: role,
         },
       });
       console.log(res);
@@ -37,8 +41,8 @@ function UserManagement() {
       const res = await axios.put(`/user/update/${userId}`, user, {
         headers: {
           "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          role: sessionStorage.getItem("role"),
+          "x-auth-token": token,
+          role: role,
         },
       });
       if (res.status === 201) {
@@ -57,8 +61,8 @@ function UserManagement() {
       const res = await axios.delete(`/user/delete/${id}`, {
         headers: {
           "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          role: sessionStorage.getItem("role"),
+          "x-auth-token": token,
+          role: role,
         },
       });
       if (res.status === 201) {

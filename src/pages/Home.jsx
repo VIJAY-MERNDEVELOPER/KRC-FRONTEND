@@ -15,13 +15,14 @@ function Home() {
           </h1>
         </div>
       ) : (
+        // Login to view Recipes
         <div className="row gap-5 justify-content-center align-items-center">
           {" "}
           <Link to={"/login"} className="btn btn-primary col-3 ">
             {" "}
             Login{" "}
           </Link>
-          <Link to={"/"} className="btn btn-primary col-3">
+          <Link to={"/all"} className="btn btn-primary col-3">
             {" "}
             Login as Guest{" "}
           </Link>

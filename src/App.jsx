@@ -14,16 +14,16 @@ import AllRecipe from "./pages/AllRecipe";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import Recipe from "./pages/Recipe";
-
 import UserManagement from "./pages/UserManagement";
 
-axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
-// "http://localhost:3001/api";
-// axios.defaults.withCredentials = true;
-// "https://krc-backend.onrender.com/api";
+// Define BaseUrl of Rest Api
+axios.defaults.baseURL = "http://localhost:3001/api";
+//  "https://krc-backend.onrender.com/api";
+
 function App() {
   return (
     <>
+      {/* Toaster defined at top to access toast by all components */}
       <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
 
       <Navbar>
@@ -36,9 +36,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/usermanagement" element={<UserManagement />} />
             <Route path="/user/register" element={<Register />} />
-
             <Route path="/myrecipe" element={<MyRecipe />} />
-
             <Route path="/addrecipe" element={<AddRecipe />} />
             <Route path="/all" element={<AllRecipe />} />
             <Route path="/recipe/:id" element={<Recipe />} />

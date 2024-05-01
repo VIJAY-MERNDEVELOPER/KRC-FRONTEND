@@ -6,11 +6,10 @@ import { UseUser } from "../contexts/userContexts";
 
 function Login() {
   const { user, setUser } = UseUser();
-
+  const navigate = useNavigate();
   useEffect(() => {
     sessionStorage.clear();
   }, []);
-  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,17 +24,19 @@ function Login() {
 
       const res = await axios.post("/user/login", { email, password });
       if (res.status === 200) {
-        console.log(res);
         const data = res.data;
+        console.log(data.userData);
+
         sessionStorage.setItem("id", data.id);
         sessionStorage.setItem("username", data.username);
         sessionStorage.setItem("role", data.role);
         sessionStorage.setItem("token", data.token);
         toast.success(data.message);
-        navigate("/");
-      } else {
-        console.log(res);
 
+        navigate("/");
+
+        return;
+      } else {
         toast.error(res.data.message);
       }
     } catch (error) {
