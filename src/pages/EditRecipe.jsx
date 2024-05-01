@@ -13,9 +13,9 @@ function EditRecipe() {
   const [input, setInput] = useState({ ...state });
 
   return (
-    <div className="container ">
-      <h1 className="  text-start mx-5">EDIT RECIPE</h1>
-      <div className="">
+    <div className="  container">
+      <div className="row">
+        <h1 className="col-8 text-center ">EDIT RECIPE</h1>
         <EditRecipeForm
           input={input}
           setInput={setInput}

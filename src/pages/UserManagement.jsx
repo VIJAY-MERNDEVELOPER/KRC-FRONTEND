@@ -15,10 +15,9 @@ function UserManagement() {
           role: sessionStorage.getItem("role"),
         },
       });
-      console.log(res);
+
       if (res.status === 201) {
         await setUsers([...res.data.allUsers]);
-        console.log(users);
       }
     } catch (error) {
       toast.error(error.data.response.message);
@@ -30,7 +29,6 @@ function UserManagement() {
   };
 
   const handleUpdate = async () => {
-    console.log(users);
     try {
       const user = await users.filter((user) => userId === user._id);
 
@@ -47,7 +45,6 @@ function UserManagement() {
         setUserId(null);
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.response.data.message);
     }
   };

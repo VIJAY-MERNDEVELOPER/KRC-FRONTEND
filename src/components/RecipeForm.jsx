@@ -66,7 +66,7 @@ function RecipeForm() {
       style={{ width: "100%" }}
     >
       <form onSubmit={handleSubmit}>
-        <div className="col-sm-8 mb-3">
+        <div className="col-sm-8 mb-3 ">
           <label htmlFor="recipename" className="form-label ">
             Recipe Name
           </label>

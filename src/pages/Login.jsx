@@ -13,7 +13,7 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(user);
+
     try {
       const { email, password } = user;
 
@@ -25,7 +25,6 @@ function Login() {
       const res = await axios.post("/user/login", { email, password });
       if (res.status === 200) {
         const data = res.data;
-        console.log(data.userData);
 
         sessionStorage.setItem("id", data.id);
         sessionStorage.setItem("username", data.username);

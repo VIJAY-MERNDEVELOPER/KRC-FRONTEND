@@ -13,7 +13,7 @@ function Navbar({ children }) {
   return (
     <div className="container-fluid ">
       <header className="nav-style ">
-        <nav className="navbar navbar-expand-lg ">
+        <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
             <Link to={"/"} className="navbar-brand nav-link">
               KITCHEN RECIPE MANAGEMENT
@@ -95,7 +95,9 @@ function Navbar({ children }) {
           )}
         </nav>
       </header>
-      <div className="container text-center "> {children}</div>
+      <div className="container text-center ">
+        <div className="row-col-8 "> {children}</div>
+      </div>
     </div>
   );
 }
