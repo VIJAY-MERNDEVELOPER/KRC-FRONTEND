@@ -1,8 +1,31 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# KITCHEN RECIPE MANAGEMENT
 
-Currently, two official plugins are available:
+- ### A user can add their recipe and it can be edited and deleted by a user.
+- ### Admin can add Recipe and view of other recipe added by the user and can be edit or delete the recipe.
+- ### Admin are able to modify user role or delete user.
+- ### Visitors can view recipe as a guest and able to add Recipe but unable to add recipe once it is added.
+- ### Other user cannot edit or delete the recipe except the Admin
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Features
+
+- Login User
+- Register User
+- Edit User
+- Add Recipe
+- Edit Recipe
+- View Recipe
+- Delete Recipe
+
+
+## 🔗 Links
+[![Deployed URL]](https://kitechen-recipe-management.netlify.app/)
+
+
+
+## Screenshots
+
+![Home Page](/public/Home Page.png)
+
