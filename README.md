@@ -29,7 +29,7 @@
 
 ![Home Page](./public/HomePage.png)
 ![Home Page 1](./public/HomePage1.png)
-![Home Page 1](./public/LoginPage.png)
-![Home Page 1](./public/UserManagement.png)
-![Home Page 1](./public/registerpage.png)
-![Home Page 1](public/Allrecipe.png)
+![Login page](./public/LoginPage.png)
+![User Management](./public/UserManagement.png)
+![Register page](./public/registerpage.png)
+![All recipe](./public/Allrecipe.png)
