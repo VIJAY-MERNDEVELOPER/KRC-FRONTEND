@@ -27,5 +27,5 @@
 
 ## Screenshots
 
-![Home Page](/public/Home Page.png)
+![Home Page](./public/Home Page.png)
 
