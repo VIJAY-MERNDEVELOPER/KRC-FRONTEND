@@ -27,6 +27,8 @@
 
 ## Screenshots
 
-![Home Page](![Home Page](./public/HomePage1.png))
+![Home Page](./public/HomePage1.png)
 ![Home Page 1](./public/HomePage1.png)
-
+![Home Page 1](./public/LoginPage.png)
+![Home Page 1](./public/UserManagement.png)
+![Home Page 1](./public/registerpage.png)
