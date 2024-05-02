@@ -4,8 +4,10 @@ import toast from "react-hot-toast";
 
 function UserManagement() {
   const [users, setUsers] = useState([]);
+
   const [userId, setUserId] = useState(true);
 
+  // Get users based on user role as a admin
   const fetchUsers = async () => {
     try {
       const res = await axios.get("/user/getusers", {
@@ -28,6 +30,7 @@ function UserManagement() {
     setUserId(id);
   };
 
+  // Update the user role only by the admin
   const handleUpdate = async () => {
     try {
       const user = await users.filter((user) => userId === user._id);
@@ -49,6 +52,7 @@ function UserManagement() {
     }
   };
 
+  // Delete User only by admin
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(`/user/delete/${id}`, {

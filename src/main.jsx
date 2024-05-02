@@ -7,11 +7,12 @@ import { UserContextProvider } from "./contexts/userContexts.jsx";
 import { RecipeContextProvider } from "./contexts/recipeContexts.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <UserContextProvider>
-    <RecipeContextProvider>
-      <BrowserRouter>
+  <BrowserRouter>
+    {" "}
+    <UserContextProvider>
+      <RecipeContextProvider>
         <App />
-      </BrowserRouter>
-    </RecipeContextProvider>
-  </UserContextProvider>
+      </RecipeContextProvider>
+    </UserContextProvider>{" "}
+  </BrowserRouter>
 );

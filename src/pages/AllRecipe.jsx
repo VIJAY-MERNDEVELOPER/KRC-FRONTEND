@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { UseRecipe } from "../contexts/recipeContexts";
 
 function AllRecipe() {
+  // getting recipe from UseRecipe Context and access function from context
   const { recipeData, getRecipe } = UseRecipe();
 
   useEffect(() => {

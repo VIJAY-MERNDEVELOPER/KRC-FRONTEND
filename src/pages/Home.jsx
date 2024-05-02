@@ -4,6 +4,7 @@ function Home() {
   const username = sessionStorage.getItem("username");
 
   return (
+    // Home component if logged in it will show content in Home page or it will ask to login or login as a guest
     <div
       className="container justify-items-center align-content-center "
       style={{ height: "70vh" }}

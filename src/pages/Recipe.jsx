@@ -1,62 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { UseRecipe } from "../contexts/recipeContexts";
 
 function Recipe() {
   const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { state } = useLocation();
+  const { deleteRecipe, recipeFetch, recipe, ingredients, steps } = UseRecipe();
 
-  const [recipe, setRecipe] = useState([]);
-  const [ingredients, setIngredients] = useState([]);
-  const [steps, setSteps] = useState([]);
   const userId = sessionStorage.getItem("id");
   const userRole = sessionStorage.getItem("role");
 
-  const recipeFetch = async () => {
-    try {
-      const res = await axios.get(`/recipe/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          id: id,
-        },
-      });
-
-      if (res.status === 200) {
-        setRecipe(res.data.recipe[0]);
-        setIngredients([...res.data.recipe[0].ingredients]);
-        setSteps([...res.data.recipe[0].steps]);
-
-        toast.success(res.data.message);
-      }
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
-
-  const deleteRecipe = async () => {
-    try {
-      const res = await axios.delete(`/recipe/delete/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          id: id,
-        },
-      });
-
-      if (res.status === 200) {
-        toast.success(res.data.message);
-        navigate("/myrecipe");
-      }
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
-
   useEffect(() => {
-    recipeFetch();
+    recipeFetch(id);
   }, []);
 
   return (
@@ -139,7 +97,7 @@ function Recipe() {
               <button
                 className="btn btn-danger"
                 onClick={() => {
-                  deleteRecipe();
+                  deleteRecipe(id);
                 }}
               >
                 {" "}

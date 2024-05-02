@@ -4,38 +4,19 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { UseRecipe } from "../contexts/recipeContexts";
 
 function EditRecipeForm({ input, setInput, id }) {
   const navigate = useNavigate();
   const cuisines = ["None", "American", "Chinese", "German", "Indian"];
   const courses = ["None", "Appetizer", "Side Dish", "Snack"];
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    try {
-      const res = await axios.put(`/recipe/edit/${id}`, input, {
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": sessionStorage.getItem("token"),
-          id: id,
-        },
-      });
-
-      if (res.status === 201) {
-        toast.success(res.data.message);
-        navigate(`/recipe/${id}`);
-      } else {
-        toast.error("Not updated");
-      }
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
+  const { updateRecipe } = UseRecipe();
 
   return (
     <div className="container  " style={{ width: "100%" }}>
       <div className="row justify-content-center">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => updateRecipe(e, id, input)}>
           <div className="col-sm-8 mb-3">
             <label htmlFor="recipename" className="form-label">
               Recipe Name

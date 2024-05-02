@@ -4,11 +4,15 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { UseRecipe } from "../contexts/recipeContexts";
+import { useNavigate } from "react-router-dom";
 
-// recipename, category, ingredients, procedure, user
 function RecipeForm() {
+  // cuisine and courses list in select list
   const cuisines = ["None", "American", "Chinese", "German", "Indian"];
   const courses = ["None", "Appetizer", "Side Dish", "Snack"];
+  const navigate = useNavigate();
+
   const username = sessionStorage.getItem("username");
   const userid = sessionStorage.getItem("id");
   const defaultValue = {
@@ -23,49 +27,21 @@ function RecipeForm() {
     steps: [""],
     user: { userid, username },
   };
+  // State management for Inouts
   const [inputRecipe, setInputRecipe] = useState(defaultValue);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("input", inputRecipe);
-
-    try {
-      const {
-        recipename,
-        cuisine,
-        course,
-        prep_time,
-        cook_time,
-        servings,
-        description,
-        ingredients,
-        steps,
-        user,
-      } = inputRecipe;
-
-      if (
-        recipename ||
-        description ||
-        ingredients.length > 0 ||
-        steps.length > 0
-      ) {
-        const res = await axios.post("/recipe/setrecipe", inputRecipe);
-        if (res.status === 201) {
-          toast.success(res.data.message);
-          setInputRecipe(defaultValue);
-        }
-      }
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
-
+  const { postRecipe } = UseRecipe();
   return (
     <div
       className="container justify-content-center "
       style={{ width: "100%" }}
     >
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          postRecipe(e, inputRecipe);
+          navigate("/myrecipe");
+        }}
+      >
         <div className="col-sm-8 mb-3 ">
           <label htmlFor="recipename" className="form-label ">
             Recipe Name

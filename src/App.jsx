@@ -18,20 +18,20 @@ import UserManagement from "./pages/UserManagement";
 
 // Define BaseUrl of Rest Api
 axios.defaults.baseURL = "https://krc-backend.onrender.com/api";
-//  "https://krc-backend.onrender.com/api";
 
 function App() {
   return (
     <>
       {/* Toaster defined at top to access toast by all components */}
       <Toaster position="top-center" toastOptions={{ duration: 2000 }} />
-
+      {/* Navbar is a main component in which all the child components loaded */}
       <Navbar>
         <div
           className="container w-100 mt-5 justify-content-center align-items-center"
           style={{ width: "100vw", height: "70vh" }}
         >
           <Routes>
+            {/* Define routes for all components */}
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/usermanagement" element={<UserManagement />} />

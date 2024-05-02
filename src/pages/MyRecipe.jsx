@@ -9,7 +9,7 @@ function MyRecipe() {
 
   useEffect(() => {
     myRecipe(id);
-  }, []);
+  }, [recipeData]);
 
   return (
     <div className="container justify-items-center align-content-center ">
