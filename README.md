@@ -32,4 +32,4 @@
 ![Home Page 1](./public/LoginPage.png)
 ![Home Page 1](./public/UserManagement.png)
 ![Home Page 1](./public/registerpage.png)
-![Home Page 1](public/All recipe.png)
+![Home Page 1](public/Allrecipe.png)
