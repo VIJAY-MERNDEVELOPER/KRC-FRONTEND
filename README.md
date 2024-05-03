@@ -7,7 +7,9 @@
 - ### Visitors can view recipe as a guest and able to add Recipe but unable to add recipe once it is added.
 - ### Other user cannot edit or delete the recipe except the Admin
 
-
+## ADMIN CREDENTIALS
+   ### EMAIL    : admin123@gmail.com
+   ### PASSWORD : Admin@123
 
 ## Features
 
